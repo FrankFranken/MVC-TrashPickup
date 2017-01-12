@@ -9,6 +9,7 @@ namespace Mvc_Trash_Pickup
         public void Configuration(IAppBuilder app)
         {
             ConfigureAuth(app);
+            //testing
         }
     }
 }
