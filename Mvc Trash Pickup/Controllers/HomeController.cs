@@ -15,14 +15,14 @@ namespace Mvc_Trash_Pickup.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "New Pick Up Changes.";
 
             return View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Please contact us if you have any questions.";
 
             return View();
         }
