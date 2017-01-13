@@ -19,12 +19,26 @@ namespace Mvc_Trash_Pickup.Controllers
 
             return View();
         }
-
-        public ActionResult Contact()
+        public ActionResult PickUps()
         {
-            ViewBag.Message = "Please contact us if you have any questions.";
+            ViewBag.Message = "Pick Up Schedules.";
 
             return View();
         }
+
+        public ActionResult Contact()
+        {
+            ViewBag.TheMessage = "Send us a message.";
+  
+            return View();
+        }
+        //[HttpPost]
+        //public ActionResult Contact(string message)
+        //    ViewBag.TheMessage = "Thanks for your Message, we'll get back to you ASAP.";
+        //    return View();
+
+        
+
+
     }
 }
