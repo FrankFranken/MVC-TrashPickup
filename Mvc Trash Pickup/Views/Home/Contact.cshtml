@@ -25,6 +25,16 @@
 
         ViewData["Title"] = "Contact";
     }
+    <h2>Postal Address.</h2>
+
+    <address>
+    One Microsoft Way<br />
+    Milwaukee, WI 98052-6399<br />
+    <abbr title="Phone">Phone:</abbr>
+    414.555.0100
+    </address>
+
+    <h2>Questions? Send us a message</h2>
     <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
     <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
@@ -70,19 +80,17 @@
                 }
             </div>
 
-            <div>
+            <di3v>
                 <div>
                     @if (ViewBag.Message != null)
-                {
+                    {
                         <div>@ViewBag.Message</div>
-
-
                     }
                 </div>
-            </div>
-        </div>
+            </di3v>
+        @*</div>
 
-    </div>
+    </div>*@
 
 
 
