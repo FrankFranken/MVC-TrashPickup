@@ -21,12 +21,12 @@ namespace Mvc_Trash_Pickup.Controllers
             {
                 if (!isAdminUser())
                 {
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Index", "Role");
                 }
             }
             else
             {
-                return RedirectToAction("Index", "Role");
+                return RedirectToAction("Index", "Home");
             }
 
             var Roles = context.Roles.ToList();
