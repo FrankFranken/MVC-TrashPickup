@@ -68,6 +68,32 @@ namespace Mvc_Trash_Pickup.Models
         [Display(Name = "UserRoles")]
         public string UserRoles { get; set; }
 
+
+        [Required]
+        [StringLength(100, MinimumLength = 6)]
+        [Display(Name = "Name")]
+        public string Name { get; set; }
+
+        [Required]
+        [EmailAddress]
+        [Display(Name = "Address")]
+        public string Address { get; set; }
+
+        [Required]
+        [EmailAddress]
+        [Display(Name = "City")]
+        public string City { get; set; }
+
+        [Required]
+        [EmailAddress]
+        [Display(Name = "State")]
+        public string State { get; set; }
+
+        [Required]
+        [EmailAddress]
+        [Display(Name = "Zipcode")]
+        public string Zipcode { get; set; }
+
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]
