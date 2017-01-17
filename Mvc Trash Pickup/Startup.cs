@@ -16,7 +16,7 @@ namespace Mvc_Trash_Pickup
         }
 
 
-        // In this method we will create default User roles and Admin user for login   
+        // In this method we will create default User roles and Admin user for login
         private void createRolesandUsers()
         {
             ApplicationDbContext context = new ApplicationDbContext();
@@ -44,13 +44,17 @@ namespace Mvc_Trash_Pickup
 
                 //var chkUser = UserManager.Create(user, userPWD);
 
+
                 ////Add default User to Role Admin   
+                //Add default User to Role Admin
+
                 //if (chkUser.Succeeded)
                 //{
                 //    var result1 = UserManager.AddToRole(user.Id, "Admin");
 
                 //}
             }
+
 
             // creating Creating Employee role    
             if (!roleManager.RoleExists("Employee"))
@@ -59,17 +63,29 @@ namespace Mvc_Trash_Pickup
                 role.Name = "Employee";
                 roleManager.Create(role);
 
+                //// creating Creating Manager role    
+                //if (!roleManager.RoleExists("Manager"))
+                //{
+                //    var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole();
+                //    role.Name = "Manager";
+                //    roleManager.Create(role);
+
+
+                //}
+
+
+                // creating Creating User role    
+
+                // creating Creating Employee role    
+
+                if (!roleManager.RoleExists("Customer"))
+                {
+                    new Microsoft.AspNet.Identity.EntityFramework.IdentityRole().Name = "Customer";
+                    roleManager.Create(new Microsoft.AspNet.Identity.EntityFramework.IdentityRole());
+
+                }
             }
 
-            // creating Creating User role    
-            if (!roleManager.RoleExists("Customer"))
-            {
-                var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole();
-                role.Name = "Customer";
-                roleManager.Create(role);
-
-            }
         }
-
     }
 }
