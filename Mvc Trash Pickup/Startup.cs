@@ -16,7 +16,7 @@ namespace Mvc_Trash_Pickup
         }
 
 
-        // In this method we will create default User roles and Admin user for login   
+       // In this method we will create default User roles and Admin user for login
         private void createRolesandUsers()
         {
             ApplicationDbContext context = new ApplicationDbContext();
@@ -29,10 +29,10 @@ namespace Mvc_Trash_Pickup
             if (!roleManager.RoleExists("Admin"))
             {
 
-                // first we create Admin role   
-                var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole();
-                role.Name = "Admin";
-                roleManager.Create(role);
+                //// first we create Admin role   
+                //var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole();
+                //role.Name = "Admin";
+                //roleManager.Create(role);
 
                 //Here we create a Admin super user who will maintain the website                  
 
@@ -44,28 +44,28 @@ namespace Mvc_Trash_Pickup
 
                 var chkUser = UserManager.Create(user, userPWD);
 
-                //Add default User to Role Admin   
-                if (chkUser.Succeeded)
-                {
-                    var result1 = UserManager.AddToRole(user.Id, "Admin");
+                //Add default User to Role Admin
+                //if (chkUser.Succeeded)
+                //{
+                //    var result1 = UserManager.AddToRole(user.Id, "Admin");
 
-                }
+                //}
             }
 
-            // creating Creating Manager role    
-            if (!roleManager.RoleExists("Manager"))
-            {
-                var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole();
-                role.Name = "Manager";
-                roleManager.Create(role);
+            //// creating Creating Manager role    
+            //if (!roleManager.RoleExists("Manager"))
+            //{
+            //    var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole();
+            //    role.Name = "Manager";
+            //    roleManager.Create(role);
 
-            }
+            //}
 
             // creating Creating Employee role    
-            if (!roleManager.RoleExists("Employee"))
+            if (!roleManager.RoleExists("Customer"))
             {
                 var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole();
-                role.Name = "Employee";
+                role.Name = "Customer";
                 roleManager.Create(role);
 
             }

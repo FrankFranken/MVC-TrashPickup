@@ -483,6 +483,13 @@ namespace Mvc_Trash_Pickup.Controllers
                 }
                 context.HttpContext.GetOwinContext().Authentication.Challenge(properties, LoginProvider);
             }
+
+            //public ActionResult Index()
+            //{
+
+            //    return ()
+            //    ;
+            //}
         }
         #endregion
     }
