@@ -211,12 +211,10 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\CountryModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Contact.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\UserAccount.cs" />
-    <Compile Include="Models\Venue.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -285,12 +283,8 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Users\Index.cshtml" />
     <Content Include="Views\Role\Index.cshtml" />
-
     <Content Include="Views\Home\Employee.cshtml" />
-
-    <Content Include="Views\Home\PickUps.cshtml" />
     <Content Include="Views\Role\Create.cshtml" />
-
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

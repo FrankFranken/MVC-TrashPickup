@@ -21,9 +21,9 @@ namespace Mvc_Trash_Pickup.Controllers
             return View();
         }
 
-        public ActionResult PickUps()
+        public ActionResult Employee()
         {
-            ViewBag.Message = "Pick Up Schedules.";
+            ViewBag.Message = "Work Schedules.";
 
             return View();
         }
