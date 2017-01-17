@@ -53,6 +53,5 @@ namespace Mvc_Trash_Pickup.Controllers
             return false;
         }
 
-
     }
 }
