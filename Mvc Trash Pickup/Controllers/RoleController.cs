@@ -26,21 +26,21 @@ namespace Mvc_Trash_Pickup.Controllers
             }
             else
             {
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Index", "Role");
             }
 
             var Roles = context.Roles.ToList();
             return View(Roles);
         }
 
-        public Boolean isAdminUser()
+        public bool isAdminUser()
         {
             if (User.Identity.IsAuthenticated)
             {
                 var user = User.Identity;
                 ApplicationDbContext context = new ApplicationDbContext();
-                var UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
-                var s = UserManager.GetRoles(user.GetUserId());
+                var userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
+                var s = userManager.GetRoles(user.GetUserId());
                 if (s[0].ToString() == "Admin")
                 {
                     return true;
