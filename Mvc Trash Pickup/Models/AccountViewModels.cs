@@ -75,22 +75,22 @@ namespace Mvc_Trash_Pickup.Models
         public string Name { get; set; }
 
         [Required]
-        [EmailAddress]
+        [Address]
         [Display(Name = "Address")]
         public string Address { get; set; }
 
         [Required]
-        [EmailAddress]
+        [City]
         [Display(Name = "City")]
         public string City { get; set; }
 
         [Required]
-        [EmailAddress]
+        [State]
         [Display(Name = "State")]
         public string State { get; set; }
 
         [Required]
-        [EmailAddress]
+        [Zipcode]
         [Display(Name = "Zipcode")]
         public string Zipcode { get; set; }
 

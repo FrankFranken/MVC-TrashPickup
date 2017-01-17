@@ -26,39 +26,30 @@ namespace Mvc_Trash_Pickup
 
 
             // In Startup iam creating first Admin Role and creating a default Admin User    
-            if (!roleManager.RoleExists("Admin"))
+            if (!roleManager.RoleExists("Employees"))
             {
 
-                // first we create Admin role   
-                var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole();
-                role.Name = "Admin";
-                roleManager.Create(role);
+                //// first we create Admin role   
+                //var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole();
+                //role.Name = "Admin";
+                //roleManager.Create(role);
 
                 //Here we create a Admin super user who will maintain the website                  
 
-                var user = new ApplicationUser();
-                user.UserName = "admin";
-                user.Email = "admin@email.com";
+                //var user = new ApplicationUser();
+                //user.UserName = "admin";
+                //user.Email = "admin@email.com";
 
-                string userPWD = "password";
+                //string userPWD = "password";
 
-                var chkUser = UserManager.Create(user, userPWD);
+                //var chkUser = UserManager.Create(user, userPWD);
 
-                //Add default User to Role Admin   
-                if (chkUser.Succeeded)
-                {
-                    var result1 = UserManager.AddToRole(user.Id, "Admin");
+                ////Add default User to Role Admin   
+                //if (chkUser.Succeeded)
+                //{
+                //    var result1 = UserManager.AddToRole(user.Id, "Admin");
 
-                }
-            }
-
-            // creating Creating Manager role    
-            if (!roleManager.RoleExists("Manager"))
-            {
-                var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole();
-                role.Name = "Manager";
-                roleManager.Create(role);
-
+                //}
             }
 
             // creating Creating Employee role    
@@ -66,6 +57,15 @@ namespace Mvc_Trash_Pickup
             {
                 var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole();
                 role.Name = "Employee";
+                roleManager.Create(role);
+
+            }
+
+            // creating Creating User role    
+            if (!roleManager.RoleExists("Customer"))
+            {
+                var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole();
+                role.Name = "Customer";
                 roleManager.Create(role);
 
             }
