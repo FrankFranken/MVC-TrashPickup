@@ -26,7 +26,7 @@ namespace Mvc_Trash_Pickup.Controllers
             }
             else
             {
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Index", "Role");
             }
 
             var Roles = context.Roles.ToList();
@@ -41,7 +41,7 @@ namespace Mvc_Trash_Pickup.Controllers
                 ApplicationDbContext context = new ApplicationDbContext();
                 var userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
                 var s = userManager.GetRoles(user.GetUserId());
-                if (s[0].ToString() == "Admin")
+                if (s[0] == "Admin")
                 {
                     return true;
                 }
