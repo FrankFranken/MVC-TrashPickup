@@ -20,7 +20,7 @@ namespace Mvc_Trash_Pickup.Controllers
 
             return View();
         }
-        public ActionResult GoogleMap()
+        public ActionResult Customer()
         {
 
             return View();

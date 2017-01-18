@@ -299,11 +299,12 @@
     <Content Include="Views\Home\Employee.cshtml" />
     <Content Include="Views\Role\Create.cshtml" />
     <Content Include="Views\Account\Index.cshtml" />
-    <Content Include="Views\Home\GoogleMap.cshtml" />
+    <Content Include="Views\Home\Customer.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Index\" />
+    <Folder Include="Views\Login\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
