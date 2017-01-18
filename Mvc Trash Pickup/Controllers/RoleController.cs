@@ -1,57 +1,58 @@
-﻿using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.EntityFramework;
-using Mvc_Trash_Pickup.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿//using Microsoft.AspNet.Identity;
+//using Microsoft.AspNet.Identity.EntityFramework;
+//using Mvc_Trash_Pickup.Models;
+//using System;
+//using System.Collections.Generic;
+//using System.Linq;
+//using System.Web;
+//using System.Web.Mvc;
+//using System.Web.Security;
 
-namespace Mvc_Trash_Pickup.Controllers
-{
-    public class RoleController : Controller
-    {
-        
-        // GET: Role
-        public ActionResult Index()
-        {
-            ApplicationDbContext context = new ApplicationDbContext();
+//namespace Mvc_Trash_Pickup.Controllers
+//{
+//    public class RoleController : Controller
+//    {
 
-            if (User.Identity.IsAuthenticated)
-            {
-                if (!isAdminUser())
-                {
-                    return RedirectToAction("Index", "Role");
-                }
-            }
-            else
-            {
-                return RedirectToAction("Index", "Role");
-            }
+//        // GET: Role
+//        public ActionResult Index()
+//        {
+//            ApplicationDbContext context = new ApplicationDbContext();
 
-            var Roles = context.Roles.ToList();
-            return View(Roles);
-        }
+//            if (User.Identity.IsAuthenticated)
+//            {
+//                if (!isEmployeeUser())
+//                {
+//                    return RedirectToAction("Index", "Home");
+//                }
+//            }
+//            else
+//            {
+//                return RedirectToAction("Index", "Home");
+//            }
 
-        public bool isAdminUser()
-        {
-            if (User.Identity.IsAuthenticated)
-            {
-                var user = User.Identity;
-                ApplicationDbContext context = new ApplicationDbContext();
-                var userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
-                var s = userManager.GetRoles(user.GetUserId());
-                if (s[0] == "Admin")
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-            return false;
-        }
+//            var roles = context.Roles.ToList();
+//            return View(roles);
+//        }
 
-    }
-}
+//        public bool isEmployeeUser()
+//        {
+//            if (User.Identity.IsAuthenticated)
+//            {
+//                var user = User.Identity;
+//                ApplicationDbContext context = new ApplicationDbContext();
+//                var userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
+//                var s = userManager.GetRoles(user.GetUserId());
+//                if (s[0] == "Employee")
+//                {
+//                    return true;
+//                }
+//                else
+//                {
+//                    return false;
+//                }
+//            }
+//            return false;
+//        }
+
+//    }
+//}
