@@ -312,13 +312,13 @@
     <Content Include="Views\Home\Employee.cshtml" />
     <Content Include="Views\Role\Create.cshtml" />
     <Content Include="Views\Account\Index.cshtml" />
-<<<<<<< HEAD
+    
     <Content Include="Views\Home\Customer.cshtml" />
-=======
+    
     <Content Include="Views\Home\GoogleMap.cshtml" />
     <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.1.1.min.map" />
->>>>>>> 38a2cc366ed81b9a236ea418f4af561b21d365c3
+
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
