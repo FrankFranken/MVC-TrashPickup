@@ -20,7 +20,11 @@ namespace Mvc_Trash_Pickup.Controllers
 
             return View();
         }
+        public ActionResult GoogleMap()
+        {
 
+            return View();
+        }
         public ActionResult Employee()
         {
             ViewBag.Message = "Work Schedules.";
