@@ -18,7 +18,7 @@ namespace Mvc_Trash_Pickup
         }
 
 
-        // In this method we will create default User roles and Admin user for login
+       
         private void createRolesandUsers()
         {
             ApplicationDbContext context = new ApplicationDbContext();
@@ -27,29 +27,30 @@ namespace Mvc_Trash_Pickup
             var userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
 
 
-            // In Startup iam creating first Admin Role and creating a default Admin User    
-            if (roleManager.RoleExists("Admin"))
+            if (roleManager.RoleExists("Customer"))
             {
-                //create Admin role   
+                var role = new IdentityRole();
+                role.Name = "Customer";
+                roleManager.Create(role);
+            }
+            if (roleManager.RoleExists("Admin"))
+            {  
                 var role = new IdentityRole();
                 role.Name = "Admin";
-                roleManager.Create(role);
-
-                //Admin                 
+                roleManager.Create(role);                
 
                 var user = new ApplicationUser();
                 user.UserName = "admin";
                 user.Email = "admin@email.com";               
                 string userPWD = "password";
                 var chkUser = userManager.Create(user, userPWD); 
-                 
-                //Add default User to Role Admin
+
                 if (chkUser.Succeeded)
                 {
                     userManager.AddToRole(user.Id, "Admin");
                 }
             }
-            //Creating Employee role    
+  
             if (roleManager.RoleExists("Employee"))
             {
                 var role = new IdentityRole();
@@ -57,9 +58,9 @@ namespace Mvc_Trash_Pickup
                 roleManager.Create(role);
 
                 var user = new ApplicationUser();
-                user.UserName = "111111";
+                user.UserName = "Employee1";
                 user.Email = "Employee1@email.com";
-                string userPWD = "111111";
+                string userPWD = "password";
                 var chkUser = userManager.Create(user, userPWD);
                 if (chkUser.Succeeded)
                 {
