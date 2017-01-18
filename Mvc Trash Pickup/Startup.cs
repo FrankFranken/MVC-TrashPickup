@@ -16,17 +16,17 @@ namespace Mvc_Trash_Pickup
         }
 
 
-       // In this method we will create default User roles and Admin user for login
+        // In this method we will create default User roles and Admin user for login
         private void createRolesandUsers()
         {
             ApplicationDbContext context = new ApplicationDbContext();
 
             var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(context));
-            var UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
+            var userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
 
 
             // In Startup iam creating first Admin Role and creating a default Admin User    
-            if (!roleManager.RoleExists("Admin"))
+            if (!roleManager.RoleExists("Employees"))
             {
 
                 //// first we create Admin role   
@@ -36,15 +36,25 @@ namespace Mvc_Trash_Pickup
 
                 //Here we create a Admin super user who will maintain the website                  
 
+
                 var user = new ApplicationUser();
                 user.UserName = "admin";
-                user.Email = "admin@email.com";
-                
+                user.Email = "admin@email.com";               
                 string userPWD = "password";
 
-                var chkUser = UserManager.Create(user, userPWD);
+                //var user = new ApplicationUser();
+                //user.UserName = "admin";
+                //user.Email = "admin@email.com";
 
+                //string userPWD = "password";
+
+
+                //var chkUser = UserManager.Create(user, userPWD);
+
+
+                ////Add default User to Role Admin   
                 //Add default User to Role Admin
+
                 //if (chkUser.Succeeded)
                 //{
                 //    var result1 = UserManager.AddToRole(user.Id, "Admin");
@@ -52,32 +62,55 @@ namespace Mvc_Trash_Pickup
                 //}
             }
 
-            //// creating Creating Manager role    
-            //if (!roleManager.RoleExists("Manager"))
-            //{
-            //    var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole();
-            //    role.Name = "Manager";
-            //    roleManager.Create(role);
-
-            //}
 
             // creating Creating Employee role    
-            if (!roleManager.RoleExists("Customer"))
-            {
-                var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole();
-                role.Name = "Customer";
-                roleManager.Create(role);
-
-            }
             if (!roleManager.RoleExists("Employee"))
             {
+                //var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole();
+                //role.Name = "Employee";
+                //roleManager.Create(role);
+
                 var user = new ApplicationUser();
                 user.UserName = "Employee1";
                 user.Email = "Employee1@email.com";
                 string userPWD = "password";
-                var chkUser = UserManager.Create(user, userPWD);
+                var chkUser = userManager.Create(user, userPWD);
+
+                //// creating Creating Manager role    
+                //if (!roleManager.RoleExists("Manager"))
+                //{
+                //    var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole();
+                //    role.Name = "Manager";
+                //    roleManager.Create(role);
+
+
+                //}
+
+
+                // creating Creating User role    
+
+                // creating Creating Employee role    
+
+                //if (!roleManager.RoleExists("Employee"))
+                //{
+                //    new Microsoft.AspNet.Identity.EntityFramework.IdentityRole().Name = "Customer";
+                //    roleManager.Create(new Microsoft.AspNet.Identity.EntityFramework.IdentityRole());
+
+                //}
             }
+
+            //if (!roleManager.RoleExists("Employee"))
+            //{
+            //    var user = new ApplicationUser();
+            //    user.UserName = "Employee1";
+            //    user.Email = "Employee1@email.com";
+            //    string userPWD = "password";
+            //    var chkUser = userManager.Create(user, userPWD);
+            //}
         }
 
+
+
+        }
     }
-}
+
