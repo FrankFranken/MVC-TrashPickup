@@ -39,7 +39,7 @@ namespace Mvc_Trash_Pickup
                 var user = new ApplicationUser();
                 user.UserName = "admin";
                 user.Email = "admin@email.com";
-
+                
                 string userPWD = "password";
 
                 var chkUser = UserManager.Create(user, userPWD);
@@ -68,6 +68,14 @@ namespace Mvc_Trash_Pickup
                 role.Name = "Customer";
                 roleManager.Create(role);
 
+            }
+            if (!roleManager.RoleExists("Employee"))
+            {
+                var user = new ApplicationUser();
+                user.UserName = "Employee1";
+                user.Email = "Employee1@email.com";
+                string userPWD = "password";
+                var chkUser = UserManager.Create(user, userPWD);
             }
         }
 

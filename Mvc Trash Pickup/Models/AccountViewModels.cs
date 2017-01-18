@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Web.Configuration;
+using Microsoft.AspNet.Identity;
 
 namespace Mvc_Trash_Pickup.Models
 {
@@ -50,7 +52,6 @@ namespace Mvc_Trash_Pickup.Models
     {
         [Required]
         [Display(Name = "UserName")]
-
         public string UserName { get; set; }
 
         [Required]
@@ -66,8 +67,7 @@ namespace Mvc_Trash_Pickup.Models
     {
         [Required]
         [Display(Name = "UserRoles")]
-        public string UserRoles { get; set; }
-
+        public string UserRoles { get; set; } = "Customer";
 
         [Required]
         [StringLength(100, MinimumLength = 6)]
@@ -75,22 +75,22 @@ namespace Mvc_Trash_Pickup.Models
         public string Name { get; set; }
 
         [Required]
-        [EmailAddress]
+        [Address]
         [Display(Name = "Address")]
         public string Address { get; set; }
 
         [Required]
-        [EmailAddress]
+        [City]
         [Display(Name = "City")]
         public string City { get; set; }
 
         [Required]
-        [EmailAddress]
+        [State]
         [Display(Name = "State")]
         public string State { get; set; }
 
         [Required]
-        [EmailAddress]
+        [Zipcode]
         [Display(Name = "Zipcode")]
         public string Zipcode { get; set; }
 
