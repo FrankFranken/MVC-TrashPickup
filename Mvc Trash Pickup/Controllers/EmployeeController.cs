@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace Mvc_Trash_Pickup.Controllers
 {
-    public class Employee
+    public class EmployeeController
     {
     }
 }

@@ -202,9 +202,10 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\Employee.cs" />
+    <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\RoleController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Global.asax.cs">
@@ -218,9 +219,13 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AddressAttribute.cs" />
     <Compile Include="Models\CityAttribute.cs" />
+    <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Contact.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\MemberType.cs" />
+    <Compile Include="Models\PickUp.cs" />
     <Compile Include="Models\StateAttribute.cs" />
     <Compile Include="Models\UserAccount.cs" />
     <Compile Include="Models\ZipcodeAttribute.cs" />
@@ -318,6 +323,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Customer\" />
     <Folder Include="Views\Index\" />
     <Folder Include="Views\Login\" />
   </ItemGroup>
