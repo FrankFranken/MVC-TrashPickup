@@ -224,7 +224,7 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Contact.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\MemberType.cs" />
+    <Compile Include="Models\UserType.cs" />
     <Compile Include="Models\PickUp.cs" />
     <Compile Include="Models\StateAttribute.cs" />
     <Compile Include="Models\UserAccount.cs" />
