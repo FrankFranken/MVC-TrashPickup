@@ -74,6 +74,7 @@ namespace Mvc_Trash_Pickup.Models
         [Display(Name = "Name")]
         public string Name { get; set; }
 
+        [Key]
         [Required]
         [Address]
         [Display(Name = "Address")]
